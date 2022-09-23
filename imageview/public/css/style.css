@@ -1,0 +1,40 @@
+/* .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+} */
+
+div.container {
+    margin: 0 0 0 20%;
+    width: 50%;
+}
+
+.picCard:hover {
+    box-shadow: 5px 10px #00a6cf;
+}
+
+.chosen {
+    box-shadow: 5px 10px #f7f028;
+}
+
+/* .container>.div {
+    height: 100px;
+    width: 700px;
+    flex: max(400px, 100%/2 - 20px);
+} */
+
+.picCard {
+    margin: 5px;
+    width: 500px;
+}
+
+.btndiv {
+    margin: 20px 0;
+    text-align: center;
+}
+
+body {
+    background-color: #00a6cf;
+    background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
