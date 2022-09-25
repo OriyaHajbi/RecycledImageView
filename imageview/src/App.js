@@ -4,7 +4,7 @@ import myData from "./mydata.json"
 // import InfiniteScroll from 'react-infinite-scroll-component';
 import Picture from './components/Picture';
 function App() {
-  const A = 48;
+  const A = myData.length || 48;
   const B = 3;
   const C = 2;
   const D = 3;
@@ -54,6 +54,7 @@ function App() {
   };
 
   function prevPhoto() {
+    console.log("prev " + currentIndexPhoto + " " + indexFetchData);
     setIsChange(!isChange);
     if (currentIndexPhoto > 0) {
       setCurrentIndexPhoto(currentIndexPhoto - 1);
@@ -71,6 +72,7 @@ function App() {
 
 
   function nextPhoto() {
+    console.log("next " + currentIndexPhoto + " " + indexFetchData);
     setIsChange(!isChange);
     if (currentIndexPhoto < (B + C + D - 3)) {
       setCurrentIndexPhoto(currentIndexPhoto + 1);
@@ -156,8 +158,11 @@ function App() {
           </div>
         </div>
       </div>
+      <div className='nomorepictures'>
+        {(indexFetchData === A && currentIndexPhoto === B + C) ? "All caught up!" : ""}
+      </div>
       <div className='btndiv'>
-        <button className='btn btn-info btn-lg' onClick={nextPhoto} disabled={indexFetchData === A}>Next Picture</button>
+        <button className='btn btn-info btn-lg' onClick={nextPhoto} disabled={indexFetchData === A && currentIndexPhoto === B + C}>Next Picture</button>
       </div>
     </div>
 
